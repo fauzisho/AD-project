@@ -15,19 +15,16 @@ export class HomePage {
   }
 
   ionViewDidLoad() {
+      console.log(localStorage.getItem("email"))
+      // autologout
+      localStorage.removeItem("email")
+    
     this.afAuth.authState.subscribe(data =>{
       if (data.email && data.uid){
-      this.toast.create({
-        message: 'welcome to meetMe,', //$data.email doesnt work
-        duration: 3000
-      }).present();
+      
     }
     else {
-      this.toast.create({
-        message: 'could not find auth detail',
-        duration: 3000
-      }).present();
-
+ 
     }
   }
     )
