@@ -6,10 +6,12 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { AngularFireModule } from "angularfire2";
 import { AngularFireAuthModule} from "angularfire2/auth";
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { HomePage } from '../pages/home/home';
 import { Geolocation } from '@ionic-native/geolocation';
 import { MyApp } from './app.component';
 import { FIREBASE_CONFIG } from './app.firebase.config';
+import {PickerServices} from '../services/PickerServices';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { FIREBASE_CONFIG } from './app.firebase.config';
     BrowserModule,
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(FIREBASE_CONFIG),
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    AngularFireDatabaseModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -33,6 +36,7 @@ import { FIREBASE_CONFIG } from './app.firebase.config';
     StatusBar,
     SplashScreen,
     Geolocation,
+    PickerServices,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

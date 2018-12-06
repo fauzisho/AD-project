@@ -28,8 +28,7 @@ export class LoginPage {
             this.showToast("Success Login")
             this.navCtrl.setRoot(HomePage)
           },
-          error => console.log(error)
-      )
+          error => console.log(error))
       .catch(function(error) {
         var errorCode = error.code;
         var errorMessage = error.message;
